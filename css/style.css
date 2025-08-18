@@ -294,30 +294,40 @@ a {
 ------------------- */
 #to-top-button {
     /* 位置を画面右下に固定 */
-
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
     /* 他の要素より手前に表示 */
 
     /* 円の形とサイズ */
-
+    width: 50px;
+    height: 50px;
+    background-color: rgba(51, 51, 51, 0.7);
     /* 半透明の黒 */
-
+    border-radius: 50%;
     /* 正円にする */
 
     /* 初期状態では非表示にする */
-
+    opacity: 0;
+    visibility: hidden;
 
     /* 表示/非表示を滑らかにアニメーションさせる */
-
+    transition: opacity 0.3s, visibility 0.3s, background-color 0;
 
     /* カーソルをポインターにする */
-
+    cursor: pointer;
 }
 
 /* JavaScriptで.showクラスがついたら表示する */
-#to-top-button.show {}
+#to-top-button.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* マウスが乗った時のスタイル */
 #to-top-button:hover {
+    background-color: rgba(51, 51, 51, 1);
     /* 少し濃くする */
 
 }
@@ -325,14 +335,20 @@ a {
 
 /* CSSで上向きの矢印を描画 */
 #to-top-button::before {
-
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
     /* 線のスタイルで三角形を作る */
-
+    border: solid #fff;
     /* 矢印の色 */
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
 
     /* 三角形を回転させて上向きにする & 位置を調整 */
-
+    transform: translate(-50%, -60%) rotate(-135deg);
 }
 
 
@@ -341,16 +357,25 @@ a {
 ------------------- */
 
 @media (max-width:999px) {
-    .wrapper {}
+    .wrapper {
+        max-width: none;
+        padding: 2% 4%;
+    }
 
-    .header {}
+    .header {
+        justify-content: space-between;
+    }
 
     .portfolio-grid {
         /* Gridを1列のみの設定 */
-
+        grid-template-columns: 1fr;
     }
 
-    .grid-box {}
+    .grid-box {
+        aspect-ratio: 10/12;
+    }
 
-    .footer {}
+    .footer {
+        height: 150px;
+    }
 }
