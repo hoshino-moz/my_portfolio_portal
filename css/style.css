@@ -220,6 +220,7 @@ a {
 
 .grid-box a {
     background: #88f;
+    margin-top: 5px;
     padding: 2% 4%;
     border-radius: 6px;
     font-size: .8em;

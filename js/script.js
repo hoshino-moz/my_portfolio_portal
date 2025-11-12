@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'images/works/jewelryhant02.png',       // 作品画像1
         'images/works/EscapeDarkness-img01.png',    // 作品画像2
         'images/works/battlecart03.jpg',   // 作品画像3
+        'images/works/robosurvivor01.png',   // 作品画像4
         
         
     ];
